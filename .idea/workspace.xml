@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="514d26c2-a6ce-4ec5-adcd-d8e761358c78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/flutter-space-x.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter-space-x.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
@@ -87,7 +91,7 @@
       <updated>1576674664404</updated>
       <workItem from="1576674666269" duration="1709000" />
       <workItem from="1576723329671" duration="5467000" />
-      <workItem from="1576839973416" duration="598000" />
+      <workItem from="1576839973416" duration="844000" />
     </task>
     <servers />
   </component>
