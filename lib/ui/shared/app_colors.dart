@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+const Color buttonDefault = Color(0xFF238AFF);
+const Color textDefaultColor = Color(0xFF252D47);
+const Color textDefaultWhite = Colors.white;
+const Color textOptionSubtitleColor = Color(0xFFFF9F00);
+const Color backgroundTextBox = Color(0xFFF5F5F5);
+const Color backgroundApp = Color(0xFFF5F7FA);
+const Color textMiniText = Color(0xFF939DAF);
+const Color textGrey = Color(0xFF36474C);
+const Color inputBorderLine = Color(0xFFEDF1F6);
+const Color iconBackColor = Color(0xFFBCC1CD);
+const Color inputError = Color(0xFFFF5252);
+const Color lineColor = Color(0xFFEFEEEE);
+const Color salak = Color(0xFFE6FAF8);
+const Color textSolid = Color(0xFF4AD1C1);
+const Color bgColorProgress = Color.fromRGBO(35, 138, 255, 0.4);
+const Color listDropDown = Color.fromRGBO(35, 138, 255, 0.05);
+const Color bgIconWarning = Color.fromRGBO(251, 238, 202, 0.8);
+const Color customGrey = Color.fromRGBO(0, 0, 0, 0.09);
+const Color customCheckBox = Color(0xFF51C39A);
+const Color smoothSolid = Color(0xFFBFF7F1);
+const Color error = Color(0xFFD77272);
+const Color backgroundProfile = Color(0xFF252D47);
+const Color iconColor = Color(0xFFBCC1CD);
+const Color buttonKuisioner = Color(0xFFEFE9FD);
+const Color textKuisioner = Color(0xFF591DF1);
+const Color iconBlack = Colors.black;
