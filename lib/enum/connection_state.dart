@@ -1,0 +1,4 @@
+enum ConnState {
+  isConnected,
+  isNotConnected
+}
