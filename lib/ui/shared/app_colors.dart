@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color buttonDefault = Color(0xFF238AFF);
-const Color textDefaultColor = Color(0xFF252D47);
+const Color textDefaultColor = Color(0xFFFFFFFF);
 const Color textDefaultWhite = Colors.white;
 const Color textOptionSubtitleColor = Color(0xFFFF9F00);
 const Color backgroundTextBox = Color(0xFFF5F5F5);
