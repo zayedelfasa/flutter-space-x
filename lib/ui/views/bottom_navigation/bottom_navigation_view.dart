@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterspacex/ui/views/next_launch/next_launch_view.dart';
+import 'package:flutterspacex/ui/views/upcomming_launch/upcomming_launch_view.dart';
 import '../../shared/text_styles.dart' as textStyle;
 
 class BottomNavigationView extends StatefulWidget {
@@ -15,18 +16,11 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Icon(Icons.favorite), Text("This is Favorites")],
-        ),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[Icon(Icons.near_me), Text("This is Near me")],
         ),
       ),
     ),
+    UpcommingLaunch(),
     Container(
       child: Center(
         child: Column(

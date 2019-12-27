@@ -1,21 +1,19 @@
-import 'dart:async';
-import 'dart:io';
-
 import 'package:connectivity/connectivity.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutterspacex/enum/connection_state.dart';
-import 'package:flutterspacex/models/NextLaunch.dart';
+import 'package:flutterspacex/models/UpcommingLaunch.dart';
 import 'package:flutterspacex/models/base/base_model.dart';
 import 'package:flutterspacex/services/api.dart';
 
-class NextLaunchModel extends BaseModel {
+class UpcommingLaunchModel extends BaseModel {
   Api api;
-  var nextLaunch = NextLaunch();
+  var upcommingLaunchList = List<UpcommingLaunch>();
   String rocketName = "";
-  NextLaunchModel({@required Api api}) : this.api = api;
+  UpcommingLaunchModel({@required Api api}) : this.api = api;
+//  getRequestUpcommingLaunch()
 
-  Future getNextLaunch() async {
-    print("on get next launch");
+  Future<void> getUpcommingLaunch() async {
+    print("on get upcomming launch");
     var connectivityResult = await (Connectivity().checkConnectivity());
 
     setBusy(true);
@@ -23,9 +21,7 @@ class NextLaunchModel extends BaseModel {
         connectivityResult == ConnectivityResult.wifi) {
 
       setConnected(ConnState.isConnected);
-      nextLaunch = await api.getRequestNextLaunch();
-//      print("next launch is : ${nextLaunch.rocket.rocketName}");
-
+      upcommingLaunchList = await api.getRequestUpcommingLaunch();
       setBusy(false);
 
     } else {
