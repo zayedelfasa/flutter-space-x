@@ -22,6 +22,7 @@ class UpcommingLaunchModel extends BaseModel {
 
       setConnected(ConnState.isConnected);
       upcommingLaunchList = await api.getRequestUpcommingLaunch();
+      print("data upcomming launch : ${upcommingLaunchList.toString()}");
       setBusy(false);
 
     } else {
