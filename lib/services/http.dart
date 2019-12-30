@@ -14,7 +14,6 @@ class DioHttp {
     _dio.interceptors.clear();
     _dio.interceptors.add(InterceptorsWrapper(onResponse: (Response response) async {
       return response; // continue
-
     }, onError: (DioError error) async {
       // Do something with response error
       print("DIO_INTERCEPTORS ERROR ${error.toString()}");

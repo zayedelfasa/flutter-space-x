@@ -24,7 +24,6 @@ class _NextLaunchState extends State<NextLaunch> {
                   child: CircularProgressIndicator(),
                 );
               }
-
               return ListView(
                 children: <Widget>[
                   Container(
