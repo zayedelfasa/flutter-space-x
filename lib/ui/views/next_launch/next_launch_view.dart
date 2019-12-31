@@ -16,87 +16,76 @@ class _NextLaunchState extends State<NextLaunch> {
       model: NextLaunchModel(api: Provider.of(context)),
       onModelReady: (model) => model.getNextLaunch(),
       builder: (context, model, child) {
-        return Scaffold(
-          body: LayoutBuilder(
-            builder: (context, constraint) {
-              if (model.busy) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-              return ListView(
-                children: <Widget>[
-                  Container(
-                    child: Center(
-                      child:
-                          Text("Welcom to Space X", style: textStyle.header1),
-                    ),
-                    height: 250,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: NetworkImage(
-                          "https://i.ytimg.com/vi/sX1Y2JMK6g8/maxresdefault.jpg"),
-                      fit: BoxFit.cover,
-                    )),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    title: Text('Launched by ${model.nextLaunch.rocket.rocketName}',
-                        style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    title: Text('Launch date', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    title: Text('LaunchPad', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    title: Text('Static Fire', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                  ),
-                  ListTile(
-                    title:
-                        Text('Dragon Capsule', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                  ),
-                  ListTile(
-                    onTap: () {},
-                    title: Text('First Stage', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    title:
-                        Text('Landing Zone', style: textStyle.subHeaderStyle),
-                    subtitle: Text('It Will Carry CRS-19 to ISS Orbit',
-                        style: textStyle.normalFont),
-                    dense: true,
-                  )
-                ],
-              );
-            },
+        if (model.busy) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        return CustomScrollView(slivers: <Widget>[
+          SliverAppBar(
+            title: Text('Upcomming Launch'),
+            backgroundColor: Colors.black,
+            expandedHeight: 200.0,
+            flexibleSpace: FlexibleSpaceBar(
+                background: Image.network(
+              "https://i.ytimg.com/vi/sX1Y2JMK6g8/maxresdefault.jpg",
+              fit: BoxFit.cover,
+            )),
           ),
-        );
+
+          SliverList(
+              delegate: SliverChildListDelegate([
+                ListTile(
+                  title: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text('Description', style: textStyle.subHeaderStyle),
+                  ),
+                  subtitle: Text('${model.nextLaunch.details}', style: textStyle.normalFont),
+                  dense: true,
+                ),
+                ListTile(
+                  onTap: () {},
+                  title: Text('Launched by ${model.nextLaunch.rocket.rocketName}', style: textStyle.subHeaderStyle),
+                  subtitle: Text('It Will Carry CRS-19 to ISS Orbit', style: textStyle.normalFont),
+                  dense: true,
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  onTap: () {},
+                  title: Text('Launch date', style: textStyle.subHeaderStyle),
+                  subtitle: Text('It will launch at ${model.nextLaunch.launchDateUtc}', style: textStyle.normalFont),
+                  dense: true,
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  onTap: () {},
+                  title: Text('Launch Site ${model.nextLaunch.launchSite.siteName}', style: textStyle.subHeaderStyle),
+                  subtitle: Text('${model.nextLaunch.launchSite.siteNameLong}', style: textStyle.normalFont),
+                  dense: true,
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  title: Text('Static Fire', style: textStyle.subHeaderStyle),
+                  subtitle: Text('It Will Carry CRS-19 to ISS Orbit', style: textStyle.normalFont),
+                  dense: true,
+                ),
+                ListTile(
+                  title: Text('Flight Number', style: textStyle.subHeaderStyle),
+                  subtitle: Text('${model.nextLaunch.flightNumber}', style: textStyle.normalFont),
+                  dense: true,
+                ),
+                ListTile(
+                  onTap: () {},
+                  title: Text('First Stage', style: textStyle.subHeaderStyle),
+                  subtitle: Text(
+                      'Type ${model.nextLaunch.rocket.firstStage.cores[0].landingType} with vehicle ${model.nextLaunch.rocket.firstStage.cores[0].landingVehicle}',
+                      style: textStyle.normalFont),
+                  dense: true,
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+              ])),
+        ]);
       },
     );
   }

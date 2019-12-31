@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterspacex/ui/views/latest_launch/latest_launch_view.dart';
 import 'package:flutterspacex/ui/views/next_launch/next_launch_view.dart';
+import 'package:flutterspacex/ui/views/rockets/rockets_view.dart';
 import 'package:flutterspacex/ui/views/upcomming_launch/upcomming_launch_view.dart';
 import '../../shared/text_styles.dart' as textStyle;
 
@@ -12,28 +14,14 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
   int tabNow = 0;
   final List<Widget> _children = [
     NextLaunch(),
-    Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Icon(Icons.near_me), Text("This is Near me")],
-        ),
-      ),
-    ),
+    Rockets(),
     UpcommingLaunch(),
+    LatestLaunch(),
     Container(
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Icon(Icons.near_me), Text("This is Near me")],
-        ),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[Icon(Icons.near_me), Text("This is Near me")],
+          children: <Widget>[Icon(Icons.near_me), Text("About Apps")],
         ),
       ),
     ),
@@ -43,7 +31,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
     return <BottomNavigationBarItem>[
       BottomNavigationBarItem(
           title: Text(
-            'HOME',
+            'LAUNCH',
             style: textStyle.normalFont10,
           ),
           icon: Icon(
@@ -52,7 +40,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
           )),
       BottomNavigationBarItem(
           title: Text(
-            'VEHICLE',
+            'ROCKETS',
             style: textStyle.normalFont10,
           ),
           icon: Icon(
@@ -79,7 +67,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
           )),
       BottomNavigationBarItem(
           title: Text(
-            'COMPANY',
+            'ABOUT APPS',
             style: textStyle.normalFont10,
           ),
           icon: Icon(

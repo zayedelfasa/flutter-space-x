@@ -10,7 +10,10 @@ import 'package:flutterspacex/services/api.dart';
 
 class NextLaunchModel extends BaseModel {
   Api api;
-  var nextLaunch = NextLaunch();
+  var nextLaunch = NextLaunch(
+    rocket: Rocket(rocketName: ""),
+
+  );
   String rocketName = "";
   NextLaunchModel({@required Api api}) : this.api = api;
 
@@ -25,7 +28,6 @@ class NextLaunchModel extends BaseModel {
       setConnected(ConnState.isConnected);
       nextLaunch = await api.getRequestNextLaunch();
 //      print("next launch is : ${nextLaunch.rocket.rocketName}");
-
       setBusy(false);
 
     } else {
